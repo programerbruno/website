@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/programerbruno/website/issues"
   },
-  "homepage": "https://github.com/programerbruno/website#readme"
+  "homepage": "https://github.com/programerbruno/website#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.4"
+  }
 }
