@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 //routes index
 app.get("/", function (req, res) {
-   res.send("this is a teshht");
+   res.render("index");
 });
 
 
