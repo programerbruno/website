@@ -12,7 +12,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+    <!------ Include the above in your HEAD tag
+    //cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js
+    //maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
+    //maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
+    ---------->
+    <script src="cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
+    <script src="maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
     <link href="/stylesheets/main.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -21,7 +29,7 @@
 
 <div class="">
 
-    <nav class="navbar navbar-expand-lg justify-content-end navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg justify-content-start navbar-dark bg-dark">
 
 
 
@@ -32,26 +40,31 @@
                 <a class="nav-item nav-link active" href="/quem-somos">Quem somos</a>
                 <a class="nav-item nav-link active" href="/contactos">Contactos</a>
             </div>
+        <div class="navbar-collapse collapse dual-collapse2">
+                <form class="form-inline my-2 my-lg-0 navbar-form navbar-nav ml-auto">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-warning" type="submit">Search</button>
+                </form>
+        </div>
     </nav>
 </div>
 
     <!-- navbar 2 -->
 
-<div class ="container form-inline image-form" >
+<div class =" jumbotron form-inline test1"  >
         <!-- in this link go to about page -->
-        <a class="navbar-brand" href="#">
-            <img src="/resources/bee_logo.png" width="150" height="150" class="d-inline-block align-top" alt="bee logo">
+        <a class="navbar-brand" href="/">
+            <h1>Venda de produtos apicolas</h1>
+            <p>Pulvinar mattis nunc sed blandit. Ullamcorper a lacus vestibulum sed arcu non odio.
+                Enim nulla aliquet porttitor lacus luctus.</p>
+            <img src="/resources/bee_logo.png" width="150" height="150" class="d-inline-block align-middle" alt="bee logo">
         </a>
-    <form class="form-inline my-2 my-lg-0 float-right navbar-form navbar-center">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
 </div>
 <!-- test nav 3-->
 <div>
-    <nav class="nav  nav-justified">
+    <nav class="navbar  nav-justified ">
         <a class="nav-item nav-link " href="/">Inicio</a>
-        <a class="nav-item nav-link active" href="#">Alimentos</a>
+        <a class="nav-item nav-link active" href="/alimento">Alimento</a>
         <a class="nav-item nav-link active" href="#">Colmeias</a>
         <a class="nav-item nav-link active" href="#">Embalagens</a>
         <a class="nav-item nav-link active" href="#">Maquinas</a>

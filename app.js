@@ -21,6 +21,10 @@ app.get("/contactos", function (req, res) {
    res.render("contacts.ejs");
 });
 
+app.get("/alimento", function (req, res) {
+   res.render("food.ejs")
+});
+
 
 
 app.listen(3000, function () {
