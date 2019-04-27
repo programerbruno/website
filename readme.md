@@ -1,10 +1,12 @@
 #
 this a website
 #the images posted in this site where colected from a free website like pixabay
+
+#logo
+https://cdn.pixabay.com/photo/2017/06/10/12/46/bee-2389834_960_720.png
+
 #bees
 https://cdn.pixabay.com/photo/2016/11/29/05/28/apiary-1867537_960_720.jpg
-https://cdn.pixabay.com/photo/2016/01/16/13/55/beehive-1143380_960_720.jpg
-https://cdn.pixabay.com/photo/2016/11/07/16/33/bees-1806219_960_720.jpg
 https://cdn.pixabay.com/photo/2019/04/18/17/23/hive-4137534_960_720.jpg
 
 #beekeper working

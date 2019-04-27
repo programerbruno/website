@@ -10,34 +10,51 @@
     <link rel="icon" type="image/png" href="#"/>
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link href="/stylesheets/main.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
 <!-- nav bar 1-->
 
-<div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="">
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <nav class="navbar navbar-expand-lg justify-content-end navbar-light bg-light">
+
+
+
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home</a>
-                <a class="nav-item nav-link active" href="#">Contactos</a>
+                <a class="nav-item nav-link active" href="/">Home</a>
+                <a class="nav-item nav-link active" href="#">Login</a>
+                <a class="nav-item nav-link active" href="#">Sign Up</a>
+                <a class="nav-item nav-link active" href="/quem-somos">Quem somos</a>
+                <a class="nav-item nav-link active" href="/contactos">Contactos</a>
             </div>
-        </div>
     </nav>
 </div>
-<div>
 
     <!-- navbar 2 -->
 
-    <nav class="navbar navbar-light">
+<div class ="container form-inline image-form" >
+        <!-- in this link go to about page -->
         <a class="navbar-brand" href="#">
-            <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="130" height="130" class="d-inline-block align-top" alt="">
-            Bootstrap
+            <img src="/resources/bee_logo.png" width="150" height="150" class="d-inline-block align-top" alt="bee logo">
         </a>
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0 float-right navbar-form navbar-center">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+</div>
+<!-- test nav 3-->
+<div>
+    <nav class="nav  nav-justified">
+        <a class="nav-item nav-link " href="/">Inicio</a>
+        <a class="nav-item nav-link active" href="#">Alimentos</a>
+        <a class="nav-item nav-link active" href="#">Colmeias</a>
+        <a class="nav-item nav-link active" href="#">Embalagens</a>
+        <a class="nav-item nav-link active" href="#">Maquinas</a>
+        <a class="nav-item nav-link active" href="#">Produtos da abelha</a>
     </nav>
 </div>
