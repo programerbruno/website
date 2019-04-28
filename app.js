@@ -31,11 +31,30 @@ app.get("/alimento", function (req, res) {
         if(err){
             console.log(err);
         }else{
-   res.render("food.ejs",{Products: selectProducts})
+   res.render("products/food.ejs",{Products: selectProducts})
         }
     })
 });
 
+app.get("/colmeias", function (req, res) {
+   Products.find({type: "colmeias"}, function (err, selectProducts) {
+      if(err){
+          console.log(err);
+      } else {
+    res.render("products/hive.ejs", {Products: selectProducts})
+      }
+   });
+});
+
+app.get("/embalagens", function (req, res) {
+    Products.find({type: "embalagens"}, function (err, selectProducts) {
+        if(err){
+            console.log(err);
+        } else {
+            res.render("products/package.ejs", {Products: selectProducts})
+        }
+    });
+});
 
 
 app.listen(3000, function () {

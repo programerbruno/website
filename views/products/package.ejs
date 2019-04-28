@@ -1,0 +1,29 @@
+<% include ../partials/header.ejs%>
+
+<div class="container-list">
+    <h1 class ="text-center">Bootstrap product grid</h1>
+    <hr>
+
+    <div class="row container">
+        <!-- Product-->
+        <% Products.forEach(function(product) { %>
+
+        <div class = "col-md-4 product-grid">
+            <div class ="image">
+                <a href ="#">
+                    <img src ="<%=product.image%>" class="w-100" alt="">
+                    <div class="overlay">
+                        <div class ="detail">View Details</div>
+                    </div>
+                </a>
+            </div>
+            <h4 class="text-center"><%=product.name%> </h4>
+            <h5 class ="text-center"> Price:<%=product.price%></h5>
+            <a href="#" class="btn buy">Comprar</a>
+        </div>
+        <!-- Product-->
+        <% })   %>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs%>

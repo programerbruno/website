@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 var Product = require("./models/products");
 
 var data = [
+    // type alimento
     {
         type: "alimento",
         subtype:"alimentadores",
@@ -51,56 +52,73 @@ var data = [
         price: "5.00",
         description: ""
     },
+    // type colmeias
     {
         type: "colmeias",
         subtype:"lusitana",
         name:"comeia lusitana completa S/cera",
-        image: "",
+        image: "http://loja.abelhasecompanhia.com/213-large_default/colmeia-lusitana-completa-c-quadros-s-cera.jpg",
         price: "60.00",
-        description: "http://loja.abelhasecompanhia.com/213-large_default/colmeia-lusitana-completa-c-quadros-s-cera.jpg"
+        description: ""
     },
     {
         type: "colmeias",
         subtype:"lusitana",
         name:"comeia lusitana completa C/cera",
-        image: "",
+        image: "http://loja.abelhasecompanhia.com/213-large_default/colmeia-lusitana-completa-c-quadros-c-cera.jpg",
         price: "60.00",
-        description: "http://loja.abelhasecompanhia.com/213-large_default/colmeia-lusitana-completa-c-quadros-c-cera.jpg"
+        description: ""
     },
     {
         type: "colmeias",
         subtype:"reversivel",
         name:"comeia reversivel completa S/cera",
-        image: "",
+        image: "http://loja.abelhasecompanhia.com/240-thickbox_default/colmeia-reversivel-completa-c-quadros-s-cera.jpg",
         price: "60.00",
-        description: "http://loja.abelhasecompanhia.com/240-thickbox_default/colmeia-reversivel-completa-c-quadros-s-cera.jpg"
+        description: ""
     },
     {
         type: "colmeias",
         subtype:"reversivel",
         name:"comeia reversivel completa C/cera",
-        image: "",
+        image: "http://loja.abelhasecompanhia.com/240-thickbox_default/colmeia-reversivel-completa-c-quadros-s-cera.jpg",
         price: "60.00",
-        description: "https://drwfxyu78e9uq.cloudfront.net/usercontent/apisfilanis/media/images/7101ec1c9a5cae8822d81736ea08531a.jpg"
+        description: ""
     },
     {
         type: "colmeias",
         subtype:"langstroth",
         name:"comeia langstroth completa S/cera",
-        image: "",
+        image: "https://drwfxyu78e9uq.cloudfront.net/usercontent/apisfilanis/media/images/7101ec1c9a5cae8822d81736ea08531a.jpg",
         price: "60.00",
-        description: "https://drwfxyu78e9uq.cloudfront.net/usercontent/apisfilanis/media/images/7101ec1c9a5cae8822d81736ea08531a.jpg"
+        description: ""
     },
     {
         type: "colmeias",
         subtype:"langstroth",
         name:"comeia langstroth completa C/cera",
-        image: "",
+        image: "https://drwfxyu78e9uq.cloudfront.net/usercontent/apisfilanis/media/images/7101ec1c9a5cae8822d81736ea08531a.jpg",
         price: "60.00",
-        description: "https://drwfxyu78e9uq.cloudfront.net/usercontent/apisfilanis/media/images/7101ec1c9a5cae8822d81736ea08531a.jpg"
+        description: ""
+    },
+    //embalagens
+    {
+        type: "embalagens",
+        subtype:"frascos",
+        name:"Frasco 1 Kg",
+        image: "http://www.jgsousa.pt/images/stories/virtuemart/product/028.059.png",
+        price: "0.30",
+        description: ""
+    },
+    {
+        type: "embalagens",
+        subtype:"frascos",
+        name:"Frasco 0.5 Kg",
+        image: "http://www.jgsousa.pt/images/stories/virtuemart/product/053.059.png",
+        price: "0.20",
+        description: ""
     },
 ];
-
 
 function seedDB() {
     Product.remove({}, function (err) {
@@ -113,7 +131,7 @@ function seedDB() {
                 if(err){
                     console.log(err);
                 } else {
-                    console.log("added product");
+                    //console.log("added product");
                     product.save();
                 }
             })
