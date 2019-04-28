@@ -2,6 +2,11 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const Products = require("./models/products.js");
+const seedDB = require("./seeds.js");
+
+
+
 
 mongoose.connect("mongodb://localhost/beekeping_website", {useNewUrlParser: true });
 app.set("view engine", "ejs");
@@ -22,7 +27,13 @@ app.get("/contactos", function (req, res) {
 });
 
 app.get("/alimento", function (req, res) {
-   res.render("food.ejs")
+    Products.find({type:"alimento"}, function (err, selectProducts) {
+        if(err){
+            console.log(err);
+        }else{
+   res.render("food.ejs",{Products: selectProducts})
+        }
+    })
 });
 
 
