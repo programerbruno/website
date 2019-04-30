@@ -28,15 +28,16 @@
 <!-- nav bar 1-->
 
 <div class="">
-
     <nav class="navbar navbar-expand-lg justify-content-start navbar-dark bg-dark">
-
-
-
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="/">Home</a>
+                <% if(!currentUser){ %>
                 <a class="nav-item nav-link active" href="/login">Login</a>
                 <a class="nav-item nav-link active" href="/register">Sign Up</a>
+                <% } else { %>
+                <a class="nav-item nav-link active" href="/#">Sign In as <%= currentUser.username %></a>
+                <a class="nav-item nav-link active" href="/logout">Logout</a>
+                <% } %>
                 <a class="nav-item nav-link active" href="/quem-somos">Quem somos</a>
                 <a class="nav-item nav-link active" href="/contactos">Contactos</a>
             </div>
@@ -49,18 +50,7 @@
     </nav>
 </div>
 
-    <!-- navbar 2 -->
-
-<div class =" jumbotron form-inline test1"  >
-        <!-- in this link go to about page -->
-        <a class="navbar-brand" href="/">
-            <h1>Venda de produtos apicolas</h1>
-            <p>Pulvinar mattis nunc sed blandit. Ullamcorper a lacus vestibulum sed arcu non odio.
-                Enim nulla aliquet porttitor lacus luctus.</p>
-            <img src="/resources/bee_logo.png" width="150" height="150" class="d-inline-block align-middle" alt="bee logo">
-        </a>
-</div>
-<!-- test nav 3-->
+<!-- test nav 2-->
 <div>
     <nav class="navbar  nav-justified ">
         <a class="nav-item nav-link " href="/">Inicio</a>

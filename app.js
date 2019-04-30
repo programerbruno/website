@@ -17,23 +17,37 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + "/public"));
 
+
 //Passport configuration
 app.use(require("express-session")({
     secret:"this is a website to sell products for beekeeping",
     resave: false,
     saveUninitialized:false
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+//make the variable global
+//midllewere
+/*
+app.use(function (req,res,next) {
+   res.local.currentUser = req.user;
+   next();
+});
+*/
+
+
+
+
 //Auth routes
 
 //show register form
 app.get("/register", function (req, res) {
-    res.render("register.ejs");
+    res.render("register.ejs", {username: req.body.username});
 });
 //sign up logic
 app.post("/register", function (req, res) {
@@ -53,7 +67,7 @@ app.post("/register", function (req, res) {
 
 //show login form
 app.get("/login", function (req, res) {
-   res.render("login");
+   res.render("login",{currentUser: req.user});
 });
 //handling login logic
 app.post("/login", passport.authenticate("local",
@@ -69,6 +83,7 @@ app.get("/logout", function (req, res) {
    res.redirect("/");
 });
 
+//to control acess
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();
@@ -78,14 +93,15 @@ function isLoggedIn(req, res, next){
 
 //routes index
 app.get("/", function (req, res) {
-    res.render("index.ejs");
+    console.log(req.user);
+    res.render("index.ejs",{currentUser: req.user});
 });
 
 app.get("/quem-somos", function (req, res) {
-   res.render("about.ejs");
+   res.render("about.ejs",{currentUser: req.user});
 });
 app.get("/contactos", function (req, res) {
-   res.render("contacts.ejs");
+   res.render("contacts.ejs", {currentUser: req.user});
 });
 
 app.get("/alimento", function (req, res) {
@@ -93,7 +109,7 @@ app.get("/alimento", function (req, res) {
         if(err){
             console.log(err);
         }else{
-   res.render("products/food.ejs",{Products: selectProducts})
+   res.render("products/food.ejs",{Products: selectProducts, currentUser: req.user})
         }
     })
 });
@@ -103,7 +119,7 @@ app.get("/colmeias", function (req, res) {
       if(err){
           console.log(err);
       } else {
-    res.render("products/hive.ejs", {Products: selectProducts})
+    res.render("products/hive.ejs", {Products: selectProducts, currentUser: req.user})
       }
    });
 });
@@ -113,7 +129,7 @@ app.get("/embalagens", function (req, res) {
         if(err){
             console.log(err);
         } else {
-            res.render("products/package.ejs", {Products: selectProducts})
+            res.render("products/package.ejs", {Products: selectProducts, currentUser: req.user})
         }
     });
 });
