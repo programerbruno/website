@@ -47,7 +47,7 @@ app.use(function (req,res,next) {
 
 //show register form
 app.get("/register", function (req, res) {
-    res.render("register.ejs", {username: req.body.username});
+    res.render("register.ejs", {currentUser: req.user});
 });
 //sign up logic
 app.post("/register", function (req, res) {
