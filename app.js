@@ -40,9 +40,6 @@ app.use(function (req,res,next) {
 });
 */
 
-
-
-
 //Auth routes
 
 //show register form

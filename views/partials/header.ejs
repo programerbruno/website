@@ -5,60 +5,121 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- the name that show on the bar-->
-    <title>Your Website</title>
+    <title>Apicultor</title>
     <!--  the icon on the bar   -->
     <link rel="icon" type="image/png" href="#"/>
-    <!-- bootstrap cdn -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag
-    //cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js
-    //maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
-    //maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
-    ---------->
-    <script src="cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-    <script src="maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
-    <script src="maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <!-- bootstrap css -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--jquery -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- popper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!-- bootstrap js-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   <!-- css file-->
     <link href="/stylesheets/main.css" rel="stylesheet" type="text/css"/>
+   <!-- test-->
+    <script type="text/javascript" src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/compiled-4.7.5.min.js"></script>
 </head>
 <body>
 
-<!-- nav bar 1-->
-
-<div class="">
-    <nav class="navbar navbar-expand-lg justify-content-start navbar-dark bg-dark">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="/">Home</a>
+<!-- navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div  class="container-fluid">
+        <a class="navbar-brand" href="#"><img  class="" src="/resources/beelogo1.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class ="nav-link" href="/">Home</a>
+                </li>
                 <% if(!currentUser){ %>
-                <a class="nav-item nav-link active" href="/login">Login</a>
-                <a class="nav-item nav-link active" href="/register">Sign Up</a>
+                <li class="nav-item">
+                    <a class ="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class ="nav-link" href="/register">Sign Up</a>
+                </li>
                 <% } else { %>
-                <a class="nav-item nav-link active" href="/#">Sign In as <%= currentUser.username %></a>
-                <a class="nav-item nav-link active" href="/logout">Logout</a>
+                <li class="nav-item">
+                    <!-- change the route later-->
+                    <a class ="nav-link" href="/">Sign In as <%=currentUser.username%></a>
+                </li>
+                <li class="nav-item">
+                    <a class ="nav-link" href="/logout">Logout</a>
+                </li>
                 <% } %>
-                <a class="nav-item nav-link active" href="/quem-somos">Quem somos</a>
-                <a class="nav-item nav-link active" href="/contactos">Contactos</a>
-            </div>
-        <div class="navbar-collapse collapse dual-collapse2">
-                <form class="form-inline my-2 my-lg-0 navbar-form navbar-nav ml-auto">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-warning" type="submit">Search</button>
-                </form>
+                <li class="nav-item">
+                    <a class ="nav-link" href="/quem-somos">Quem somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class ="nav-link" href="/contactos">Contactos</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<!-- small jumbotron-->
+
+<div class="container-fluid">
+    <div class=" row jumbotron nav-margin-bottom-zero">
+        <div class="col-md-4 col-lg-4">
+            <h1> APICULTOR</h1>
+            <h5> simple website for something</h5>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg 6 col-xl-6">
+            <div class="input-group md-form form-sm form-2 pl-0">
+                <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search4" aria-label="Search">
+                <div class="input-group-append">
+                    <span class="input-group-text amber lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+                                                                                       aria-hidden="true"></i></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-<!-- test nav 2-->
-<div>
-    <nav class="navbar  nav-justified ">
-        <a class="nav-item nav-link " href="/">Inicio</a>
+<!-- navbar 2-->
+
+<nav class="navbar navbar-expand-lg navbar-light warning-color lighten-5 ">
+<div class="container-fluid ">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive2">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive2">
+
+    <ul class="navbar-nav nav-fill w-100">
+        <li class="nav-item">
+            <a class="nav-item nav-link active" href="/">Inicio</a>
+        </li>
+        <li class="nav-item">
         <a class="nav-item nav-link active" href="/alimento">Alimento</a>
+        </li>
+        <li class="nav-item">
         <a class="nav-item nav-link active" href="/colmeias">Colmeias</a>
+        </li>
+        <li class="nav-item">
         <a class="nav-item nav-link active" href="/embalagens">Embalagens</a>
+        </li>
+        <li class="nav-item">
         <a class="nav-item nav-link active" href="#">Maquinas</a>
+        </li>
+        <li class="nav-item">
         <a class="nav-item nav-link active" href="#">Produtos</a>
+        </li>
+        <li class="nav-item">
         <a class="nav-item nav-link active" href="#">Produtos da abelha</a>
-    </nav>
+        </li>
+    </ul>
+    </div>
 </div>
+</nav>
