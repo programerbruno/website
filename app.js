@@ -9,10 +9,20 @@ const Products = require("./models/products.js");
 const User = require("./models/user.js");
 const seedDB = require("./seeds.js");
 
+mongoose.connect("mongodb+srv://devsproud:dbpassword@cluster0-dbehl.mongodb.net/test?retryWrites=true", {
+    userNewUrlParser:true,
+    userCreateIndex: true
+}). then(() =>{
+    console.log("Connected to DB!");
+}).catch(err => {
+    console.log("ERROR", err.message);
+});
 
 
-
+/*
 mongoose.connect("mongodb://localhost/beekeping_website", {useNewUrlParser: true });
+
+ */
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname));
@@ -133,6 +143,13 @@ app.get("/embalagens", function (req, res) {
 });
 
 
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("Server Has Started!");
+});
+
+/*
 app.listen(3000, function () {
     console.log("the Server has started");
 });
+
+ */
