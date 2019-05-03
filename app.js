@@ -4,8 +4,9 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const passport    = require("passport");
 const LocalStrategy = require("passport-local");
+const GoogleStrategy = require("passport-google-oauth20");
 const Products = require("./models/products.js");
-const User = require("./models/user.js")
+const User = require("./models/user.js");
 const seedDB = require("./seeds.js");
 
 
@@ -49,7 +50,7 @@ app.get("/register", function (req, res) {
 //sign up logic
 app.post("/register", function (req, res) {
     //this will get the user
-   const newUser = new User({username: req.body.username});
+   const newUser = new User({fullname: req.body.fullname, username: req.body.username, email: req.body.email});
    //this will get the password
     User.register(newUser, req.body.password, function (err, user) {
         if(err){
@@ -64,7 +65,7 @@ app.post("/register", function (req, res) {
 
 //show login form
 app.get("/login", function (req, res) {
-   res.render("login",{currentUser: req.user});
+   res.render("login",{currentUser: req.username});
 });
 //handling login logic
 app.post("/login", passport.authenticate("local",
